@@ -1,0 +1,22 @@
+''' Binary search algorithm using a recursive approach. Function compares item with middle element in list. If there is a match,
+True is returned. If item is larger than the midpoint, then it lies to the right of the midpoint, otherise it lies to the left of the midpoint.
+Recursion ensues until the item is found, if not, False is returned '''
+
+def binary_search(arr, item):
+    if len(arr) == 0:
+        return False
+    else:
+        midpoint = len(arr)//2
+        if arr[midpoint] == item:
+            return True
+        else:
+            if item < arr[midpoint]:
+                return binary_search(arr[:midpoint], item)
+            else:
+                return binary_search(arr[midpoint+1:], item)
+
+
+testlist = [0, 1, 2, 4, 6, 34, 55, 79]
+print(binary_search(testlist, 6))
+print(binary_search(testlist, 1))
+print(binary_search(testlist, 3))
