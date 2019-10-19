@@ -1,0 +1,15 @@
+''' Linear search algorithm. Starts from leftmost element in arr[] and incrementally compares item with each elemnt in arr[]. If
+there is a match, the index is returned, otherwise False is returned '''
+
+
+def Linear_search(arr, item):
+    for i in range(len(arr)):
+        if arr[i] == item:
+            return i
+    return False
+
+
+testlist = [0, 1, 2, 4, 6, 34, 55, 79]
+print(Linear_search(testlist, 6))
+print(Linear_search(testlist, 1))
+print(Linear_search(testlist, 3))
